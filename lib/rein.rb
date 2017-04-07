@@ -10,6 +10,8 @@ require "rein/constraint/presence"
 require "rein/type/enum"
 require "rein/view"
 require "rein/schema"
+require "rein/default/generator"
+require "rein/default/gen_random_uuid"
 
 module ActiveRecord
   module ConnectionAdapters # :nodoc:
@@ -34,6 +36,8 @@ module ActiveRecord
       include Rein::Type::Enum
       include Rein::View
       include Rein::Schema
+      include Rein::Default::Generator
+      include Rein::Default::GenRandomUUID
     end
   end
 end
